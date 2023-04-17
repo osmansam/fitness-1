@@ -21,7 +21,7 @@ const Navbar = () => {
   );
   const navbarBackground = classNames({
     "bg-transparent": isTopOfPage,
-    "bg-black": !isTopOfPage,
+    "bg-primary-100": !isTopOfPage,
     "drop-shadow": isTopOfPage,
     "shadow-sm": !isTopOfPage,
     "transition-colors": true, // Add transition effect to color properties

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { RootState, useAppDispatch } from "./store";
 import { setSelectPage, setIsTopOfPage } from "./features/context/contextSlice";
 import Navbar from "./scenes/navbar";
+import Home from "./scenes/home";
 import { SelectedPage } from "./shared/types";
 function App() {
   const dispatch = useAppDispatch();
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="app bg-gray-20">
       <Navbar />
+      <Home />
     </div>
   );
 }
