@@ -1,23 +1,36 @@
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import Logo from "@/assets/Logo.png";
+import Logo from "../../assets/Logo.png";
 import Link from "./Link";
-import { SelectedPage } from "@/shared/types";
-import ActionButton from "@/shared/ActionButton";
-import useMediaQuery from "@/hooks/UseMediaQuery";
 import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "@/store";
-import { setSelectPage, setIsTopOfPage } from "@/features/context/contextSlice";
+import { RootState, useAppDispatch } from "../../store";
+import classNames from "classnames";
+
+import {
+  setSelectPage,
+  setIsTopOfPage,
+} from "../../features/context/contextSlice";
+import ActionButton from "../../shared/ActionButton";
+import useMediaQuery from "../../hooks/UseMediaQuery";
+import { SelectedPage } from "../../shared/types";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
   const { flexBetween, selectedPage, isTopOfPage } = useSelector(
     (state: RootState) => state.context
   );
+  const navbarBackground = classNames({
+    "bg-transparent": isTopOfPage,
+    "bg-black": !isTopOfPage,
+    "drop-shadow": isTopOfPage,
+    "shadow-sm": !isTopOfPage,
+    "transition-colors": true, // Add transition effect to color properties
+    "duration-500": true, // Set transition duration
+    "ease-in-out": true, // Set transition easing
+  });
 
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
 
   return (
     <nav>

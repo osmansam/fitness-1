@@ -1,8 +1,9 @@
-import { SelectedPage } from "@/shared/types";
+import { SelectedPage } from "../../shared/types";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "@/store";
-import { setSelectPage } from "@/features/context/contextSlice";
+import { RootState, useAppDispatch } from "../../store";
+import { setSelectPage } from "../../features/context/contextSlice";
+
 type Props = {
   page: string;
 };

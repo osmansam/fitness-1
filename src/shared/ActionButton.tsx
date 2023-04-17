@@ -1,8 +1,8 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { SelectedPage } from "./types";
-import { setSelectPage } from "@/features/context/contextSlice";
-import { useAppDispatch } from "@/store";
+import { setSelectPage } from "../features/context/contextSlice";
+import { useAppDispatch } from "../store";
 
 type Props = {
   children: React.ReactNode;
