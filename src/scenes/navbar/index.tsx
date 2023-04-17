@@ -11,14 +11,10 @@ import { setSelectPage, setIsTopOfPage } from "@/features/context/contextSlice";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
-  const isTopOfPage = useSelector(
-    (state: RootState) => state.context.isTopOfPage
-  );
-  const selectedPage = useSelector(
-    (state: RootState) => state.context.selectedPage
+  const { flexBetween, selectedPage, isTopOfPage } = useSelector(
+    (state: RootState) => state.context
   );
 
-  const flexBetween = "flex items-center justify-between";
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
