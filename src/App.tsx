@@ -3,7 +3,12 @@ import { RootState, useAppDispatch } from "./store";
 import { setSelectPage, setIsTopOfPage } from "./features/context/contextSlice";
 import Navbar from "./scenes/navbar";
 import Home from "./scenes/home";
+import Benefit from "./scenes/benefits";
+import OurClasses from "./scenes/ourClasses";
+import ContactUs from "./scenes/contactUs";
+import Footer from "./scenes/footer";
 import { SelectedPage } from "./shared/types";
+
 function App() {
   const dispatch = useAppDispatch();
 
@@ -23,6 +28,10 @@ function App() {
     <div className="app bg-gray-20">
       <Navbar />
       <Home />
+      <Benefit />
+      <OurClasses />
+      <ContactUs />
+      <Footer />
     </div>
   );
 }
